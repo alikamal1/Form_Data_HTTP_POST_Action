@@ -1,6 +1,8 @@
 name: 'File upload using HTTP Action'
 description: 'File upload using HTTP POST request'
-icon: 'upload'
+branding:
+  icon: 'upload'  
+  color: 'blue'
 inputs:
   url:
     description: 'The endpoint of post request'
