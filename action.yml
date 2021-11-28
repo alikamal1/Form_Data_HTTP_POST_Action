@@ -1,13 +1,20 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'File upload using HTTP Action'
+description: 'File upload using HTTP POST request'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  url:
+    description: 'The endpoint of post request'
     required: true
-    default: '1000'
+  headers:
+    description: 'The endpoint of post request'
+  name:
+    description: 'File name'
+    required: true
+  path:
+    description: 'File path'
+    required: true
 outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
+  response:
+    description: 'The response of POST request'
 runs:
   using: 'node12'
   main: 'dist/index.js'
