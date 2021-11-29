@@ -7412,17 +7412,17 @@ async function run() {
     const url = core.getInput('url')
     const headers = JSON.parse(core.getInput('headers') || [])  
     const name = core.getInput('name')
-    const path = core.getInput('file')
+    const file = core.getInput('file')
     console.log(url)
     console.log(headers)
     console.log(name)
-    console.log(path)
+    console.log(file)
     core.info(`Connecting to endpoint (${url}) ...`)
 
     
     const form = new FormData();
 
-    form.append(name, fs.createReadStream(path));
+    form.append(name, fs.createReadStream(file));
 
     const response = await axios({
       method: 'POST',
