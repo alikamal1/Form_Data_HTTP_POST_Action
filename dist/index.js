@@ -7407,16 +7407,16 @@ const axios = __nccwpck_require__(6545);
 
 async function run() {
   try {
+
+  
+    const url = core.getInput('url')
+    const headers = JSON.parse(core.getInput('headers') || [])  
+    const name = core.getInput('name')
+    const path = core.getInput('file')
     console.log(url)
     console.log(headers)
     console.log(name)
     console.log(path)
-  
-    const url = core.getInput('url')
-    const headers = JSON.parse(core.getInput('headers') || [])  
-    console.log(headers)
-    const name = core.getInput('name')
-    const path = core.getInput('file')
     core.info(`Connecting to endpoint (${url}) ...`)
 
     
