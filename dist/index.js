@@ -7430,6 +7430,7 @@ async function run() {
       headers: { 'Content-Type': 'multipart/form-data', ...[headers] },
       data: form,
     })
+    console.log(response)
 
     core.setOutput('response', { 'statusCode': response.statusCode, 'data': response.data });
   } catch (error) {
