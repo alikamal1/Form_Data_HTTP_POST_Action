@@ -7434,6 +7434,7 @@ async function run() {
 
     core.setOutput('response', { 'statusCode': response.statusCode, 'data': response.data });
   } catch (error) {
+    console.log(error)
     core.setFailed(error.message);
   }
 }
