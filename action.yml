@@ -12,7 +12,7 @@ inputs:
   name:
     description: 'File name'
     required: true
-  path:
+  file:
     description: 'File path'
     required: true
 outputs:
