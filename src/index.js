@@ -24,18 +24,18 @@ async function run() {
 
 
     const response = await axios({
-    method: 'POST',
-    url: url,
-    headers: { 'Content-Type': 'multipart/form-data', ...{ headers } },
-    data: form,
-  })
-  console.log(response)
+      method: 'POST',
+      url: url,
+      headers: { 'Content-Type': 'multipart/form-data', ...headers },
+      data: form,
+    })
+    console.log(response)
 
-  core.setOutput('response', { 'statusCode': response.statusCode, 'data': response.data });
-} catch (error) {
-  console.log(error)
-  core.setFailed(error.message);
-}
+    core.setOutput('response', { 'statusCode': response.statusCode, 'data': response.data });
+  } catch (error) {
+    console.log(error)
+    core.setFailed(error.message);
+  }
 }
 
 run();
