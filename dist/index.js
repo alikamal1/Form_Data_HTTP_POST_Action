@@ -7408,9 +7408,9 @@ const axios = __nccwpck_require__(6545);
 async function run() {
   try {
 
-  
+
     const url = core.getInput('url')
-    const headers = JSON.parse(core.getInput('headers') || [])  
+    const headers = JSON.parse(core.getInput('headers') || '{}')
     const name = core.getInput('name')
     const file = core.getInput('file')
     console.log(url)
@@ -7419,24 +7419,25 @@ async function run() {
     console.log(file)
     core.info(`Connecting to endpoint (${url}) ...`)
 
-    
+
     const form = new FormData();
 
     form.append(name, fs.createReadStream(file));
 
-    const response = await axios({
-      method: 'POST',
-      url: url,
-      headers: { 'Content-Type': 'multipart/form-data', ...[headers] },
-      data: form,
-    })
-    console.log(response)
 
-    core.setOutput('response', { 'statusCode': response.statusCode, 'data': response.data });
-  } catch (error) {
-    console.log(error)
-    core.setFailed(error.message);
-  }
+    const response = await axios({
+    method: 'POST',
+    url: url,
+    headers: { 'Content-Type': 'multipart/form-data', ...{ headers } },
+    data: form,
+  })
+  console.log(response)
+
+  core.setOutput('response', { 'statusCode': response.statusCode, 'data': response.data });
+} catch (error) {
+  console.log(error)
+  core.setFailed(error.message);
+}
 }
 
 run();
