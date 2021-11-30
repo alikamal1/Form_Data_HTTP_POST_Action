@@ -1,20 +1,24 @@
-name: 'File upload using HTTP Action'
-description: 'File upload using HTTP POST request'
+name: 'Form Data Http POST Action'
+description: 'This action used to post form-data and/or upload file from repository'
 branding:
   icon: 'upload'  
   color: 'blue'
 inputs:
   url:
-    description: 'The endpoint of post request'
+    description: 'The Endpoint of post request'
     required: true
   headers:
-    description: 'The endpoint of post request'
+    description: 'The Headers of post request'
+    required: false
+  data:
+    description: 'Form data'
+    required: false
   name:
     description: 'File name'
-    required: true
+    required: false
   file:
     description: 'File path'
-    required: true
+    required: false
 outputs:
   response:
     description: 'The response of POST request'

@@ -1,8 +1,8 @@
 {
-  "name": "javascript-action",
+  "name": "form-data-http-post-action",
   "version": "1.0.0",
-  "description": "JavaScript Action Template",
-  "main": "index.js",
+  "description": "This action used to post form-data and/or upload file from repository",
+  "main": "src/index.js",
   "scripts": {
     "lint": "eslint .",
     "prepare": "ncc build src/index.js -o dist --source-map --license licenses.txt",
@@ -11,17 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/javascript-action.git"
+    "url": "git+https://github.com/alikamal1/Form_Data_HTTP_POST_Action.git"
   },
   "keywords": [
     "GitHub",
     "Actions",
-    "JavaScript"
+    "JavaScript",
+    "form-data",
+    "upload",
+    "http post"
   ],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/actions/javascript-action/issues"
+    "url": "https://github.com/alikamal1/Form_Data_HTTP_POST_Action/issues"
   },
   "homepage": "https://github.com/actions/javascript-action#readme",
   "dependencies": {

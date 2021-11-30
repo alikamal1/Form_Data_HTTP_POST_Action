@@ -7407,23 +7407,28 @@ const axios = __nccwpck_require__(6545);
 
 async function run() {
   try {
-
-
     const url = core.getInput('url')
     const headers = JSON.parse(core.getInput('headers') || '{}')
+    const data = JSON.parse(core.getInput('data') || '{}')
     const name = core.getInput('name')
     const file = core.getInput('file')
-    console.log(url)
-    console.log(headers)
-    console.log(name)
-    console.log(file)
+
+    console.log(`URL: ${url}`)
+    console.log(`Headers: ${headers}`)
+    console.log(`Data: ${data}`)
+    console.log(`File Name: ${name}`)
+    console.log(`File Path: ${file}`)
     core.info(`Connecting to endpoint (${url}) ...`)
 
-
     const form = new FormData();
+    for (const [key, value] of Object.entries(data)) {
+      form.append(key, value)
+    }
 
-    form.append(name, fs.createReadStream(file));
 
+    if (name && file) {
+      form.append(name, fs.createReadStream(file));
+    }
 
     const response = await axios({
       method: 'POST',
@@ -7431,6 +7436,7 @@ async function run() {
       headers: { 'Content-Type': 'multipart/form-data', ...headers },
       data: form,
     })
+    
     console.log(response)
 
     core.setOutput('response', { 'statusCode': response.statusCode, 'data': response.data });
