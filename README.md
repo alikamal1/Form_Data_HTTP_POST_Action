@@ -1,7 +1,5 @@
 # Form Data Http POST Action
 
-[![Check dist/](https://github.com/alikamal1/Form_Data_HTTP_POST_Action/actions/workflows/check-dist.yml/badge.svg?branch=main)](https://github.com/alikamal1/Form_Data_HTTP_POST_Action/actions/workflows/check-dist.yml)
-
 This action used to post form-data and/or upload file from repository
 
 ## Inputs
