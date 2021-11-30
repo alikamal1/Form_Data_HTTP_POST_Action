@@ -31,7 +31,6 @@ This action used to post form-data and/or upload file from repository
   uses: alikamal1/Form_Data_HTTP_POST_Action@main
   with:
     url: 'https://example.com'
-    headers: '{"x-api-key": "123456"}'
     name: 'config'
     file: 'assets/config.json'
 ```
@@ -44,6 +43,7 @@ This action used to post form-data and/or upload file from repository
   with:
     url: 'https://example.com'
     headers: '{"x-api-key": "123456"}'
+    data: '{"key_1": "value_1", "key_2": "value_2"}'
     name: 'config'
     file: 'assets/config.json'
 ```
