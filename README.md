@@ -6,11 +6,11 @@ This action used to post form-data and/or upload file from repository
 
 |Input|Required|Description|Example
 |---|---|---|---|
-|url|Yes|HTTP Endpoint|'www.example.com'
-|headers|No|Addition Headers|'{"x-api-key": "123456"}'
-|data|No|Form Data|'{"key": "value"}'
-|name|No|File Name|'config'
-|file|No|File Path|'assets/config.json'
+|url|Yes|HTTP Endpoint|`'www.example.com'`
+|headers|No|Addition Headers|`'{"x-api-key": "123456"}'`
+|data|No|Form Data|`'{"key": "value"}'`
+|name|No|File Name|`'config'`
+|file|No|File Path|`'assets/config.json'`
 
 ## Example Usage
 
