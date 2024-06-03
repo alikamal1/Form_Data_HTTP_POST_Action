@@ -1,6 +1,6 @@
 {
   "name": "form-data-http-post-action",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This action used to post form-data and/or upload file from repository",
   "main": "src/index.js",
   "scripts": {
